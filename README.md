@@ -1,4 +1,4 @@
-bsd92env
+ubuntu 13.10 env
 ======
 
-Setup FreeBSD 9.2 environment and kernel for Parallels Desktop 9
+Setup ubutun 13.10 server for OpenStack Controller Node installation (Havana version)
