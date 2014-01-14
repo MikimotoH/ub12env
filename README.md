@@ -1,4 +1,4 @@
-ub12env
-=======
+bsd92env
+======
 
-ubuntu 12.04/13.10 LTS environment
+Setup FreeBSD 9.2 environment and kernel for Parallels Desktop 9
