@@ -57,9 +57,7 @@ endif
 " ex command for toggling hex mode - define mapping if desired
 command! -bar Hexmode call ToggleHex()
 
-" Alt-L to reload tags
-" map <C-[>l 
-nnoremap <C-L> :!exctags -R --c-kinds=+p --links=no --sort=foldcase . <CR>
+nnoremap <C-L> :!ctags -R --c-kinds=+p --links=no --sort=foldcase . <CR>
 autocmd InsertLeave * if pumvisible() == 0|pclose|endif
 
 " helper function to toggle hex mode
@@ -133,7 +131,7 @@ set wildmode=longest,list:longest
 set wildmode=longest,list,full
 set wildmenu
 
-set tags+=/usr/src/sys/amd64/include/tags,/usr/src/sys/x86/include/tags,/usr/src/sys/tags,/usr/include/tags,/usr/include/sys/tags,./tags,tags;
+set tags+=./tags,tags;
 
 " Tip 1235
 " Use embedded Python Calculator
