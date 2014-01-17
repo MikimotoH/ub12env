@@ -9,7 +9,7 @@ sudo apt-get install -y git zsh mercurial wget \
     curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | sh
 
 
-cp ./rkj-repos.zsh-theme $HOME/oh-my-zsh/themes
+cp ./rkj-repos.zsh-theme $HOME/.oh-my-zsh/themes
 
 (mkdir -p $HOME/.oh-my-zsh/custom/plugins; \
     cd $HOME/.oh-my-zsh/custom/plugins; \
