@@ -11,13 +11,13 @@ sudo apt-get install -y git zsh mercurial wget \
 
 cp ./rkj-repos.zsh-theme $HOME/.oh-my-zsh/themes
 
-(mkdir -p $HOME/.oh-my-zsh/custom/plugins; \
-    cd $HOME/.oh-my-zsh/custom/plugins; \
-    git clone https://github.com/zsh-users/zsh-syntax-highlighting \
+(mkdir -p $HOME/.oh-my-zsh/custom/plugins && \
+    cd $HOME/.oh-my-zsh/custom/plugins && \
+    git clone https://github.com/zsh-users/zsh-syntax-highlighting &&  \
     git clone https://github.com/zsh-users/zsh-history-substring-search )
 
 (cd $HOME && \
-    hg clone https://bitbucket.org/sjl/hg-prompt && \
+    hg clone https://bitbucket.org/sjl/hg-prompt  && \
     hg clone https://bitbucket.org/sjl/mercurial-cli-templates )
 
 ln -sf `readlink -f .gitconfig` $HOME/
