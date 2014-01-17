@@ -13,18 +13,18 @@ cp ./rkj-repos.zsh-theme $HOME/.oh-my-zsh/themes
 
 (mkdir -p $HOME/.oh-my-zsh/custom/plugins && \
     cd $HOME/.oh-my-zsh/custom/plugins && \
-    git clone https://github.com/zsh-users/zsh-syntax-highlighting &&  \
-    git clone https://github.com/zsh-users/zsh-history-substring-search )
+    git clone git://github.com/zsh-users/zsh-syntax-highlighting &&  \
+    git clone git://github.com/zsh-users/zsh-history-substring-search )
 
 (cd $HOME && \
     hg clone https://bitbucket.org/sjl/hg-prompt  && \
     hg clone https://bitbucket.org/sjl/mercurial-cli-templates )
 
-ln -sf `readlink -f .gitconfig` $HOME/
-ln -sf `readlink -f .vimrc` $HOME/
-ln -sf `readlink -f .vim` $HOME/
-ln -sf `readlink -f .zshrc` $HOME/
-ln -sf `readlink -f .hgrc`  $HOME/
+cp ./.gitconfig $HOME/
+cp ./.vimrc $HOME/
+cp ./.hgrc $HOME/
+cp ./.zshrc $HOME/
+mkdir -p $HOME/.vim
 
 # git config initialize 
 git config --global user.name MikimotoH
@@ -43,11 +43,10 @@ git config --global color.ui true
     > $HOME/.vim/colors/wombat256.vim )
 
 (cd $HOME/.vim/bundle && \
-    git clone https://github.com/scrooloose/nerdtree && \
-    git clone https://github.com/majutsushi/tagbar )
+    git clone git://github.com/scrooloose/nerdtree && \
+    git clone git://github.com/majutsushi/tagbar )
 
-
-
+# ack.vim
 ( curl -L "www.vim.org/scripts/download_script.php?src_id=10433" \
     | tar zxvf - -C $HOME/.vim )
 
@@ -56,11 +55,12 @@ git config --global color.ui true
     > $HOME/.vim/plugin/DirDiff.vim )
 
 # install Ag
-( git clone https://github.com/rking/ag.vim $HOME/.vim/bundle/ag &&\
+( git clone git://github.com/rking/ag.vim $HOME/.vim/bundle/ag &&\
     vim $HOME/.vim/bundle/ag/doc -c "helptags ." -c "q")
 echo "tags" >> $HOME/.agignore
 
 if [ -d $HOME/.vim/doc ] ; then
+
     if [ "$(ls -A $HOME/.vim/doc )" ]; then 
         print  "$HOME/.vim/doc not empty" 
         vim -c "helptags $HOME/.vim/doc/" -c "q"
